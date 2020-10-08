@@ -1,12 +1,13 @@
 {
-  "name": "auction",
-  "description": "A Vue.js project",
+  "name": "krakint-miner",
+  "description": "Krakin't Solo Miner",
   "version": "1.0.0",
-  "author": "Satomin <satomin@tart.tokyo>",
+  "author": "Krakin't <info@krakint.com>",
   "license": "MIT",
   "private": true,
+   "https":true, 
   "scripts": {
-    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
+    "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot --https --port 3000",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },
   "dependencies": {
