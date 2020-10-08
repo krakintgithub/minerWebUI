@@ -15,7 +15,13 @@
         <hr>
         <hr>
         <hr>
-
+        <div class="krakintext">
+          <div class="welcome">Welcome to Krakin't miner !</div>
+          This simple interface will let you mine the Krakin't tokens by making an initial deposit.
+          Mechanism is very similar to staking, however, we have also added <i>Proof Of Burn</i> to improve the price vs demand precision.
+          Please use and install <a href="https://metamask.io/download.html" target="_blank">Metamask</a>.
+          Once Krakin't tokens are deposited, simply sit back and watch your earnings grow every 20 seconds or less in a Miner Console.
+        </div>
 
         <div class="console">
 
@@ -42,11 +48,13 @@
 
           <img src="img/console.png" style='height: 100%; width: 100%; object-fit: contain'>
         </div>
-        <div>
-          <hr>
-          <hr>
-          <hr>
 
+          <div class="krakintext2">
+            To start mining or increase the mining power, specify Krakin't token amount in a "Deposit KRK" field, and press a "Deposit" button.
+            Do all confirmations in the Metamask popup-window, and wait for the network to approve your transfer. Then simply watch the Miner Console.
+            Repeat the same if you want to obtain a certain amount of tokens back from a miner and into your Metamask wallet.
+            If you don't have any tokens to start with, please refer to <a href="https://www.krakint.com" target="_blank">Krakin't Web-Page</a>.
+          </div>
           <div class="trade">
             <table style="width:60%">
               <tr>
@@ -112,28 +120,14 @@
 
         </div>
 
-      </div>
+
     </div>
 
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
-    <hr>
+
 
     <div class="stats">
       <div>Your Address: {{ userAddress }}</div>
-      <div>Burned: {{ totalBurned }} KRK</div>
+      <div>Total Burned: {{ totalBurned }} KRK</div>
       <div>Number of Miners: {{ miners }}</div>
     </div>
 
@@ -298,10 +292,10 @@ body {
 label{
   display: inline-block;
   margin-bottom: 0.5rem;
-  color: #5d5a53;
+  color: #f8faf7;
   font-size: 25px;
   font-weight: bold;
-  -webkit-text-stroke: 1px #f8faf7;
+  -webkit-text-stroke: 1px #5d5a53;
 }
 
 
@@ -324,6 +318,33 @@ label{
   border-radius: 25px;
 }
 
+.krakintext{
+  text-align: center;
+  width: 50%;
+  margin-left: 23%;
+  color: #e9f0ee;
+  margin-bottom: 60px;
+  font-size: 1.7vw;
+}
+
+.krakintext2{
+  text-align: center;
+  width: 50%;
+  margin-left: 23%;
+  color: #e9f0ee;
+  margin-bottom: 60px;
+  font-size: 1.3vw;
+  margin-top: 50px;
+}
+
+
+.welcome{
+  font-size: 2.8vw;
+  color: #f7dc69;
+  -webkit-text-stroke-width: 1px;
+  -webkit-text-stroke-color: #e8af21;
+}
+
 .stats{
   text-align: center;
   width: 50%;
@@ -335,6 +356,7 @@ color: #fff;
   text-align: center;
   padding-left: 24vw;
   position: relative;
+  margin-bottom: 333px;
 }
 
 
