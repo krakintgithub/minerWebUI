@@ -2,14 +2,14 @@
   <div class="container">
 
     <div class="header">
-      <img src="img/cave_header.svg" width="100%">
+      <img src="./assets/img/cave_header.svg" width="100%">
     </div>
 
     <div class="b-row moveUp leftPadding">
       <div>
         <div class="logo_text">
           <h1>
-            <img src="img/logo_text.png" width="25%">
+            <img src="./assets/img/logo_text.png" width="25%">
           </h1>
         </div>
         <hr>
@@ -46,7 +46,7 @@
             </tr>
           </table>
 
-          <img src="img/console.png" style='height: 100%; width: 100%; object-fit: contain'>
+          <img src="./assets/img/console.png" style='height: 100%; width: 100%; object-fit: contain'>
         </div>
 
           <div class="krakintext2">
@@ -137,7 +137,7 @@
 
 
     <div class="footer">
-      <img src="img/cave_footer.svg" width="100%">
+      <img src="./assets/img/cave_footer.svg" width="100%">
     </div>
 
   </div>
@@ -157,7 +157,7 @@ function truncateNumber(x) {
 }
 
 function formatNumber(x) {
-  return x.replace(/\,/g, '');
+  return x.replace(/,/g, '');
 }
 
 function formatAddress(address){
@@ -165,12 +165,14 @@ function formatAddress(address){
 }
 
 
+
+
 export default {
   name: 'APP',
-  created() {
+  created: function() {
     this.interval = setInterval(() => this.refreshData(), 6000);
   },
-  data() {
+  data: function() {
     return {
       userAddress: 'Please install Metamask',
       miners: '',
@@ -296,7 +298,7 @@ h1 {
 }
 
 body {
-  background-color: #050000;
+  background-color: #050000!important;
 }
 
 label{
