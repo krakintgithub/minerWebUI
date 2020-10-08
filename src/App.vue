@@ -28,13 +28,13 @@
           <table style="width:100%">
             <tr>
               <th>
-                <div style="opacity: 0">....................</div>
+                <div style="opacity: 0">...........</div>
               </th>
               <th></th>
             </tr>
             <tr>
               <td>
-                <div style="opacity: 0">....................</div>
+                <div style="opacity: 0">...........</div>
               </td>
               <td>
                 MINER CONSOLE<br><br>
