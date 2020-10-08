@@ -56,7 +56,7 @@
             If you don't have any tokens to start with, please refer to <a href="https://www.krakint.com" target="_blank">Krakin't Web-Page</a>.
           </div>
           <div class="trade">
-            <table style="width:60%">
+            <table style="width:63%">
               <tr>
                 <td>
                   <label for="deposit">
@@ -84,6 +84,9 @@
                   </div>
 
 
+                </td>
+                <td>
+                  <div style="opacity: 0">......................................</div>
                 </td>
                 <td>
                   <label for="withdraw">
@@ -125,9 +128,10 @@
 
 
 
-    <div class="stats">
+    <div class="krakintext2" style="margin-top: 12vw;">
       <div>Your Address: {{ userAddress }}</div>
       <div>Total Burned: {{ totalBurned }} KRK</div>
+      <div>Total Minted: {{ totalMinted }} KRK</div>
       <div>Number of Miners: {{ miners }}</div>
     </div>
 
@@ -168,11 +172,12 @@ export default {
   },
   data() {
     return {
-      userAddress: '',
+      userAddress: 'Please install Metamask',
       miners: '',
       totalBurned: '',
+      totalMinted: '',
       blockNumber: '',
-      reward: '',
+      reward: 'Please install Metamask',
       deposit: '',
       withdraw: '',
     };
@@ -186,7 +191,7 @@ export default {
       const fromAddress = web3.eth.accounts.givenProvider.selectedAddress;
 
       auctionBox.methods
-          .getLastPivot()
+          .getPivot()
           .call()
           .then((n) => {
             this.miners = n;
@@ -196,6 +201,12 @@ export default {
           .call()
           .then((n) => {
             this.totalBurned = numberWithCommas(truncateNumber(web3.utils.fromWei(n, 'ether')));
+          });
+      auctionBox.methods
+          .getTotalMinted()
+          .call()
+          .then((n) => {
+            this.totalMinted = numberWithCommas(truncateNumber(web3.utils.fromWei(n, 'ether')));
           });
       auctionBox.methods
           .getCurrentBlockNumber()
@@ -271,7 +282,6 @@ table {
   color: #74ff74;
   margin-top: 25px;
   font-size: 1.4vw;
-  text-align: left;
 }
 
 th, td {
@@ -293,7 +303,7 @@ label{
   display: inline-block;
   margin-bottom: 0.5rem;
   color: #f8faf7;
-  font-size: 25px;
+  font-size: 1.3vw;
   font-weight: bold;
   -webkit-text-stroke: 1px #5d5a53;
 }
@@ -353,10 +363,9 @@ color: #fff;
 }
 
 .trade{
-  text-align: center;
-  padding-left: 24vw;
   position: relative;
   margin-bottom: 333px;
+  margin-left: 23%;
 }
 
 
