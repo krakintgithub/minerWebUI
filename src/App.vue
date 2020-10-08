@@ -174,14 +174,14 @@ export default {
   },
   data: function() {
     return {
-      userAddress: 'Please install Metamask',
-      miners: '',
-      totalBurned: '',
-      totalMinted: '',
-      blockNumber: '',
-      reward: 'Please install Metamask',
-      deposit: '',
-      withdraw: '',
+      userAddress: 'Connect to Metamask',
+      miners: '-1',
+      totalBurned: '-1',
+      totalMinted: '-1',
+      blockNumber: '-1',
+      reward: 'Connect to Metamask',
+      deposit: '-1',
+      withdraw: '-1',
     };
   },
   beforeMount() {
