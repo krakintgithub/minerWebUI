@@ -8,6 +8,21 @@
     <title><%= htmlWebpackPlugin.options.title %></title>
   </head>
   <body>
+
+  <div class="nometamask" style="display: none;">
+      <div class="header">
+          <a href="https://metamask.io/" target="_blank"><img src="./assets/img/cave_header.png" width="100%"></a>
+      </div>
+  </div>
+
+  <script>
+      window.addEventListener('load', function() {
+          if (typeof web3 == 'undefined') {
+              document.getElementsByClassName('nometamask')[0].style.display = "block";
+          }
+      })
+  </script>
+
     <noscript>
       <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
     </noscript>

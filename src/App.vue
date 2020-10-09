@@ -180,8 +180,8 @@ export default {
       totalMinted: '-1',
       blockNumber: '-1',
       reward: 'Connect to Metamask',
-      deposit: '-1',
-      withdraw: '-1',
+      deposit: '',
+      withdraw: '',
     };
   },
   beforeMount() {
