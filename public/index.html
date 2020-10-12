@@ -1,32 +1,256 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
+<head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width,initial-scale=1.0">
     <link rel="icon" href="<%= BASE_URL %>favicon.ico">
     <title><%= htmlWebpackPlugin.options.title %></title>
-  </head>
-  <body>
+</head>
+<body>
+<div class="nometamask">
+    <div class="nopopup" id="nopopup">
+        <div class="nopopup-inner">
+            <div class="miner-off">
+                <img src="./assets/img/miner.png" alt="" width="100%" class="miner">
+            </div>
+        </div>
+        <div class="install-metamask">Please install:<br><img src="./assets/img/metamask_logo.png" height="50px"><br>
+            Metamask.<br> Then, reload...
+        </div>
+        <div class="metamask-link"><a href="https://metamask.io/download.html" target="_blank">Click Here</a></div>
+    </div>
+</div>
 
-  <div class="nometamask" style="display: none;">
-      <div class="header">
-          <a href="https://metamask.io/" target="_blank"><img src="./assets/img/cave_header.png" width="100%"></a>
-      </div>
-  </div>
+<script>
+    function displdep() {
+        document.getElementsByClassName('balance')[0].style.display = "none";
+        document.getElementsByClassName('install-metamask')[0].style.display = "none";
+        document.getElementsByClassName('balance')[0].style.display = "none";
+        document.getElementsByClassName('withscr')[0].style.display = "none";
 
-  <script>
-      window.addEventListener('load', function() {
-          if (typeof web3 == 'undefined') {
-              document.getElementsByClassName('nometamask')[0].style.display = "block";
-          }
-      })
-  </script>
+        document.getElementsByClassName('depscr')[0].style.display = "block";
+    }
 
-    <noscript>
-      <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
-    </noscript>
-    <div id="app"></div>
-    <!-- built files will be auto injected -->
-  </body>
+    function displwtn() {
+        document.getElementsByClassName('balance')[0].style.display = "none";
+        document.getElementsByClassName('install-metamask')[0].style.display = "none";
+        document.getElementsByClassName('balance')[0].style.display = "none";
+        document.getElementsByClassName('depscr')[0].style.display = "none";
+
+        document.getElementsByClassName('withscr')[0].style.display = "block";
+    }
+
+    function mouseExit() {
+        document.getElementsByClassName('depscr')[0].style.display = "none";
+        document.getElementsByClassName('withscr')[0].style.display = "none";
+
+        document.getElementsByClassName('balance')[0].style.display = "block";
+    }
+
+    window.addEventListener('load', function () {
+
+
+        if (typeof web3 == 'undefined') {
+            window.location.href = "#nopopup";
+            document.getElementsByClassName('nometamask')[0].style.display = "block";
+            document.getElementsByClassName('hasmetamask')[0].style.display = "none";
+        } else {
+            document.getElementsByClassName("nometamask")[0].style.display = "block";
+            window.location.href = "#popup";
+
+        }
+    });
+
+
+</script>
+
+<noscript>
+    <strong>We're sorry but <%= htmlWebpackPlugin.options.title %> doesn't work properly without JavaScript enabled.
+        Please enable it to continue.</strong>
+</noscript>
+<div id="app"></div>
+<!-- built files will be auto injected -->
+<style>
+
+    .nometamask {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .hasmetamask {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .metamask-link {
+        margin-right: 0;
+        position: absolute;
+        margin-top: 80px;
+    }
+
+    .install-metamask {
+        margin-right: 0;
+        position: absolute;
+        margin-bottom: 170px;
+        text-align: center;
+    }
+
+    .depscr {
+        margin-right: 0;
+        position: absolute;
+        margin-bottom: 170px;
+        text-align: center;
+    }
+
+    .withscr {
+        margin-right: 0;
+        position: absolute;
+        margin-bottom: 170px;
+        text-align: center;
+    }
+
+
+    .balance {
+        margin-right: 0;
+        position: absolute;
+        margin-bottom: 170px;
+        text-align: center;
+    }
+
+
+    .depbttn {
+        position: absolute;
+        margin-top: 310px;
+        margin-right: 140px;
+    }
+
+    #depbttn {
+        border: 0;
+        height: 73px;
+        width: 73px;
+        background: none;
+        border-radius: 100px;
+    }
+
+    .wthbttn {
+        position: absolute;
+        margin-top: 311px;
+        margin-left: 141px;
+    }
+
+    #wthbttn {
+        border: 0;
+        height: 73px;
+        width: 73px;
+        background: none;
+        border-radius: 100px;
+    }
+
+    .txtform {
+        margin-right: 0;
+        position: absolute;
+    }
+
+    #tbox {
+        width: 260px;
+        margin-top: 80px;
+        text-align: center;
+        border: 0px;
+        background: none;
+    }
+
+    .popup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+        transition: .64s ease-in-out;
+    }
+
+    .popup-inner {
+        position: relative;
+        bottom: -100vw;
+        right: -100vh;
+        display: flex;
+        align-items: center;
+        max-width: 440px;
+        max-height: 600px;
+        width: 440px;
+        height: auto;
+        transform: rotate(32deg);
+        transition: .64s ease-in-out;
+    }
+
+
+    .popup:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .popup:target .popup-inner {
+        bottom: 0;
+        right: 0;
+        transform: rotate(0);
+    }
+
+
+    .nopopup {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        position: fixed;
+        width: 100vw;
+        height: 100vh;
+        bottom: 0;
+        right: 0;
+        background-color: rgba(0, 0, 0, 0.8);
+        z-index: 2;
+        visibility: hidden;
+        opacity: 0;
+        overflow: hidden;
+        transition: .64s ease-in-out;
+    }
+
+    .nopopup-inner {
+        position: relative;
+        bottom: -100vw;
+        right: -100vh;
+        display: flex;
+        align-items: center;
+        max-width: 440px;
+        max-height: 600px;
+        width: 440px;
+        height: auto;
+        transform: rotate(32deg);
+        transition: .64s ease-in-out;
+    }
+
+
+    .nopopup:target {
+        visibility: visible;
+        opacity: 1;
+    }
+
+    .nopopup:target .nopopup-inner {
+        bottom: 0;
+        right: 0;
+        transform: rotate(0);
+    }
+
+
+</style>
+
+</body>
 </html>
