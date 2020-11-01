@@ -159,7 +159,7 @@ export default {
 <style>
 
 #tbox{
-  width: 160px;
+  width: 160px !important;
 }
 
 .depositButton {
