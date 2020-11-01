@@ -158,6 +158,10 @@ export default {
 
 <style>
 
+.txtform{
+  width: 160px;
+}
+
 .depositButton {
   margin-top: 3px;
   margin-right: 26px !important;
