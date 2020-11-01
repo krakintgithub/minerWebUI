@@ -158,7 +158,7 @@ export default {
 
 <style>
 
-.txtform{
+#tbox{
   width: 160px;
 }
 
