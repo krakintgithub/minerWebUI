@@ -14,6 +14,10 @@
       <!--        <div class="install-metamask">Please install:<br><img src="./assets/img/metamask_logo.png" height="50px"><br>-->
       <!--          Metamask.<br> Then, reload...</div>-->
 
+      <div class="refreshButton" v-on:click="reloadMiner()"></div>
+
+
+
       <div class="depscr" style="display: none">DEPOSIT<br><img src="./assets/img/deposit.png" height="50px">
         <div style="text-align: left">
           <li>Enter amount</li>
@@ -104,6 +108,7 @@ export default {
     this.refreshData();
   },
   methods: {
+    reloadMiner(){window.location.reload(true);},
     refreshData() {
       this.userAddress = formatAddress(web3.eth.accounts.givenProvider.selectedAddress);
       const fromAddress = web3.eth.accounts.givenProvider.selectedAddress;
@@ -171,6 +176,7 @@ export default {
   width: 69px;
   background: none !important;
   border: 0px !important;
+  cursor: pointer;
 }
 
 .withdrawButton {
@@ -181,6 +187,22 @@ export default {
   height: 69px;
   width: 69px;
   background: none !important;
+  cursor: pointer;
 }
+
+
+.refreshButton {
+  border: 0px !important;
+  border-radius: 100px !important;
+  height: 46px;
+  width: 46px;
+  background: none !important;
+  position: absolute;
+  margin-top: -466px;
+  margin-left: 393px;
+  cursor: pointer;
+}
+
+
 
 </style>
