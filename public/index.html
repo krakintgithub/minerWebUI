@@ -28,8 +28,20 @@
         document.getElementsByClassName('install-metamask')[0].style.display = "none";
         document.getElementsByClassName('balance')[0].style.display = "none";
         document.getElementsByClassName('withscr')[0].style.display = "none";
+        document.getElementsByClassName('reloadscr')[0].style.display = "none";
 
         document.getElementsByClassName('depscr')[0].style.display = "block";
+    }
+
+
+    function displreload(){
+        document.getElementsByClassName('balance')[0].style.display = "none";
+        document.getElementsByClassName('install-metamask')[0].style.display = "none";
+        document.getElementsByClassName('balance')[0].style.display = "none";
+        document.getElementsByClassName('depscr')[0].style.display = "none";
+        document.getElementsByClassName('withscr')[0].style.display = "none";
+
+        document.getElementsByClassName('reloadscr')[0].style.display = "block";
     }
 
     function displwtn() {
@@ -37,6 +49,7 @@
         document.getElementsByClassName('install-metamask')[0].style.display = "none";
         document.getElementsByClassName('balance')[0].style.display = "none";
         document.getElementsByClassName('depscr')[0].style.display = "none";
+        document.getElementsByClassName('reloadscr')[0].style.display = "none";
 
         document.getElementsByClassName('withscr')[0].style.display = "block";
     }
@@ -44,6 +57,7 @@
     function mouseExit() {
         document.getElementsByClassName('depscr')[0].style.display = "none";
         document.getElementsByClassName('withscr')[0].style.display = "none";
+        document.getElementsByClassName('reloadscr')[0].style.display = "none";
 
         document.getElementsByClassName('balance')[0].style.display = "block";
     }
@@ -109,6 +123,13 @@
     }
 
     .withscr {
+        margin-right: 0;
+        position: absolute;
+        margin-bottom: 170px;
+        text-align: center;
+    }
+
+    .reloadscr {
         margin-right: 0;
         position: absolute;
         margin-bottom: 170px;

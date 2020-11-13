@@ -14,7 +14,9 @@
       <!--        <div class="install-metamask">Please install:<br><img src="./assets/img/metamask_logo.png" height="50px"><br>-->
       <!--          Metamask.<br> Then, reload...</div>-->
 
-      <div class="refreshButton" v-on:click="reloadMiner()"></div>
+      <div class="refreshButton" v-on:click="reloadMiner()"
+           onmouseenter="displreload()" onmouseleave="mouseExit()"
+      ></div>
 
 
 
@@ -31,6 +33,14 @@
           <li>Click red button</li>
         </div>
       </div>
+
+      <div class="reloadscr" style="display: none">RELOAD<br><img src="./assets/img/reload.png" height="50px">
+        <div style="text-align: left">
+          <li>Connect to Metamask</li>
+          <li>Press Reload</li>
+        </div>
+      </div>
+
 
       <!--        <div class="metamask-link"><a href="https://metamask.io/download.html" target="_blank">Click Here</a></div>-->
       <div class="balance">
@@ -60,6 +70,7 @@
           </b-button>
         </div>
       </div>
+
     </div>
   </div>
 
