@@ -173,6 +173,8 @@ export default {
 </script>
 
 <style>
+body {background:none transparent !important;
+}
 
 #tbox{
   width: 160px !important;
