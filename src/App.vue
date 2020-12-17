@@ -207,12 +207,12 @@ body {background:none transparent !important;
 .refreshButton {
   border: 0px !important;
   border-radius: 100px !important;
-  height: 46px;
-  width: 46px;
+  height: 33px;
+  width: 33px;
   background: none !important;
   position: absolute;
-  margin-top: -466px;
-  margin-left: 393px;
+  margin-top: -138px;
+  margin-left: 353px;
   cursor: pointer;
 }
 
